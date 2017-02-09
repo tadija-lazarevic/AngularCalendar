@@ -1,0 +1,442 @@
+body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1;
+  margin: 20px 0; }
+
+.monthSelector {
+  position: relative;
+  z-index: 0;
+  float: left;
+  width: 15%;
+  overflow: hidden;
+  background-color: #6b6eed;
+  padding: 15px 0; }
+  .monthSelector .gradient > li > span {
+    margin-left: -8px !important; }
+  .monthSelector .gradient::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    content: "";
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(top, rgba(75, 80, 223, 0.9) 0%, transparent 50%, transparent 50%, rgba(75, 80, 223, 0.9) 100%);
+    background: -webkit-linear-gradient(top, rgba(75, 80, 223, 0.9) 0%, transparent 50%, transparent 50%, rgba(75, 80, 223, 0.9) 100%);
+    background: -moz-linear-gradient(top, rgba(75, 80, 223, 0.9) 0%, transparent 50%, transparent 50%, rgba(75, 80, 223, 0.9) 100%); }
+  .monthSelector .gradient::after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    margin-top: -27px;
+    height: 29px;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #4e52d9;
+    left: 15%;
+    top: 50%;
+    border: 1px solid #989bf3; }
+  .monthSelector ul {
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    text-align: center;
+    width: 120%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 470px;
+    list-style-type: none;
+    overflow: -moz-scrollbars-vertical; }
+    .monthSelector ul .year {
+      color: #c6c7f8; }
+    .monthSelector ul .firstYear {
+      padding-top: 210px; }
+    .monthSelector ul .lastYear {
+      padding-bottom: 232px; }
+    .monthSelector ul li {
+      font-family: "Roboto", sans-serif;
+      color: #fff;
+      font-size: 15px;
+      line-height: 30px; }
+      .monthSelector ul li span {
+        display: inline-block;
+        line-height: 30px;
+        cursor: pointer;
+        margin-left: -15px; }
+
+.calendarContainer {
+  width: 750px;
+  height: 500px;
+  border: 1px solid #eff0fc;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-box-shadow: -15px 15px 35px 10px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: -15px 15px 35px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: -15px 15px 35px 10px rgba(0, 0, 0, 0.15); }
+
+.tableContainer {
+  position: relative;
+  float: left;
+  width: 60%;
+  height: 100%; }
+  .tableContainer .cover {
+    top: 50%;
+    left: -20px;
+    margin-top: -38px;
+    position: absolute;
+    height: 50px;
+    width: 22px;
+    overflow: hidden; }
+  .tableContainer .arrow-left {
+    border-bottom-left-radius: 5px;
+    position: absolute;
+    width: 30px;
+    height: 45px;
+    left: 22px;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg); }
+  .tableContainer header {
+    overflow: hidden;
+    position: relative;
+    border-right: 1px solid #eff0fc; }
+  .tableContainer h2 {
+    padding: 0 25px;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+    text-align: left;
+    height: 60px;
+    line-height: 60px;
+    color: #6b6eed; }
+    .tableContainer h2 span {
+      font-size: 15px;
+      color: #c6c7f8;
+      margin-left: 10px; }
+    .tableContainer h2 button {
+      background-color: transparent;
+      float: right;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 1px solid #eff0fc;
+      color: #cccce3;
+      line-height: 20px;
+      padding: 0;
+      text-align: center;
+      font-size: 18px;
+      font-weight: 400;
+      font-family: "Roboto", sans-serif;
+      margin-top: 17px;
+      cursor: pointer;
+      -webkit-transition: all 0.2s ease;
+      -moz-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
+      transition: all 0.2s ease; }
+      .tableContainer h2 button:hover {
+        background-color: #eff0fc; }
+  .tableContainer table {
+    font-family: "Nunito", sans-serif;
+    background: #fff;
+    border-collapse: collapse;
+    color: #6b6eed;
+    font-size: 13px;
+    width: 100%;
+    height: calc(100% - 60px);
+    font-weight: 700; }
+  .tableContainer td {
+    position: relative;
+    border: 1px solid #eff0fc;
+    line-height: 22px;
+    text-align: left;
+    vertical-align: top;
+    padding: 5px 0 0 10px;
+    width: 14.28%;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    cursor: pointer; }
+    .tableContainer td:hover {
+      background-color: #eff0fc;
+      color: #fe7f80; }
+    .tableContainer td .noteMarks {
+      padding-bottom: 5px;
+      text-align: center;
+      position: absolute;
+      width: auto;
+      margin: 0 2px;
+      bottom: 0;
+      left: 0;
+      right: 0; }
+      .tableContainer td .noteMarks span {
+        width: 13px;
+        height: 13px;
+        line-height: 14px;
+        text-align: center;
+        border-radius: 50%;
+        margin: 2px;
+        color: #fff;
+        font-size: 9px;
+        display: inline-block;
+        float: left; }
+      .tableContainer td .noteMarks span.labelRed {
+        background-color: #fe7f80; }
+      .tableContainer td .noteMarks span.labelBlue {
+        background-color: #6b6eed; }
+      .tableContainer td .noteMarks span.labelGreen {
+        background-color: #4bcb54; }
+      .tableContainer td .noteMarks span.labelYellow {
+        background-color: #f9ba52; }
+  .tableContainer td.disabled {
+    color: #d3d3e4;
+    background-color: transparent; }
+  .tableContainer tr:first-child {
+    border: 1px solid #eff0fc;
+    height: 30px; }
+    .tableContainer tr:first-child td {
+      border: none;
+      text-align: center;
+      vertical-align: middle;
+      padding: 0; }
+  .tableContainer tr:first-child td {
+    color: #b1b2c8; }
+  .tableContainer .selected {
+    border: none;
+    color: #fe7f80; }
+    .tableContainer .selected:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 2px solid #fe7f80; }
+
+.dateContainer {
+  position: relative;
+  overflow: hidden;
+  float: left;
+  border-left: 1px solid #eff0fc;
+  width: calc(25% - 1px);
+  height: 100%; }
+  .dateContainer header h2 {
+    overflow: hidden;
+    border-bottom: 1px solid #eff0fc;
+    color: #9191ae;
+    font-weight: 600;
+    padding: 0 10px 0 20px;
+    font-size: 17px;
+    margin: 0;
+    text-align: left;
+    height: 60px;
+    line-height: 60px; }
+    .dateContainer header h2 span {
+      color: #aeaec4;
+      margin-left: 5px;
+      font-size: 15px; }
+  .dateContainer .notes {
+    width: 110%;
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .dateContainer .notes li {
+      position: relative;
+      margin: 0 5px;
+      line-height: 18px;
+      list-style-type: none;
+      height: auto;
+      padding: 15px 25px 14px 20px;
+      border-bottom: 1px solid #eff0fc;
+      cursor: pointer; }
+      .dateContainer .notes li:last-child {
+        border-bottom: none; }
+      .dateContainer .notes li:hover .editIcons {
+        opacity: 1; }
+      .dateContainer .notes li:after {
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        content: "";
+        border-radius: 50%;
+        top: 18px;
+        left: 4px; }
+      .dateContainer .notes li h3 {
+        max-width: 90%;
+        margin: 0;
+        padding: 0;
+        color: #b1b2c8;
+        font-size: 13px; }
+      .dateContainer .notes li p {
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        color: #cfd0dd; }
+    .dateContainer .notes li.labelRed:after {
+      background-color: #fe7f80; }
+    .dateContainer .notes li.labelBlue:after {
+      background-color: #6b6eed; }
+    .dateContainer .notes li.labelGreen:after {
+      background-color: #4bcb54; }
+    .dateContainer .notes li.labelYellow:after {
+      background-color: #f9ba52; }
+    .dateContainer .notes .editIcons {
+      opacity: 0;
+      position: absolute;
+      right: 5px;
+      top: 15px;
+      -webkit-transition: opacity 0.2s ease-in-out;
+      -moz-transition: opacity 0.2s ease-in-out;
+      -ms-transition: opacity 0.2s ease-in-out;
+      -o-transition: opacity 0.2s ease-in-out;
+      transition: opacity 0.2s ease-in-out; }
+      .dateContainer .notes .editIcons button {
+        padding: 0;
+        background: none;
+        display: inline-block;
+        border: none;
+        outline: none;
+        width: 15px;
+        height: 15px;
+        cursor: pointer; }
+      .dateContainer .notes .editIcons svg {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease; }
+        .dateContainer .notes .editIcons svg .st0 {
+          fill: #b1b2c8; }
+        .dateContainer .notes .editIcons svg:hover .st0 {
+          fill: #6b6eed; }
+  .dateContainer .notes.closed {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0); }
+  .dateContainer .addNote {
+    position: absolute;
+    top: 65px;
+    bottom: 0;
+    right: -300px;
+    width: 180px;
+    height: 345px;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    -ms-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    background-color: #fff; }
+    .dateContainer .addNote form {
+      padding: 15px; }
+      .dateContainer .addNote form select,
+      .dateContainer .addNote form textarea,
+      .dateContainer .addNote form input {
+        font-family: "Roboto", sans-serif;
+        font-size: 13px;
+        width: 100%;
+        border: 1px solid #eff0fc;
+        box-sizing: border-box;
+        margin: 10px 0;
+        color: #b1b2c8; }
+      .dateContainer .addNote form select,
+      .dateContainer .addNote form input {
+        height: 30px;
+        line-height: 30px;
+        padding-left: 10px; }
+        .dateContainer .addNote form select option,
+        .dateContainer .addNote form input option {
+          height: 30px;
+          line-height: 30px; }
+      .dateContainer .addNote form textarea {
+        padding: 10px; }
+        .dateContainer .addNote form textarea::-webkit-input-placeholder {
+          font-size: 13px;
+          color: #cfd0dd;
+          font-family: "Roboto", sans-serif; }
+        .dateContainer .addNote form textarea:-moz-placeholder {
+          font-size: 13px;
+          color: #cfd0dd;
+          font-family: "Roboto", sans-serif; }
+        .dateContainer .addNote form textarea::-moz-placeholder {
+          font-size: 13px;
+          color: #cfd0dd;
+          font-family: "Roboto", sans-serif; }
+        .dateContainer .addNote form textarea:-ms-input-placeholder {
+          font-size: 13px;
+          color: #cfd0dd;
+          font-family: "Roboto", sans-serif; }
+      .dateContainer .addNote form button {
+        width: 100%;
+        height: 35px;
+        line-height: 30px;
+        background-color: #6b6eed;
+        color: #fff;
+        border: 1px solid #fff;
+        text-transform: uppercase;
+        font-size: 11px;
+        cursor: pointer;
+        -webkit-transition: all 0.2s ease;
+        -moz-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease; }
+        .dateContainer .addNote form button:hover {
+          background-color: #fff;
+          border: 1px solid #6b6eed;
+          color: #6b6eed; }
+  .dateContainer .addNote.opened {
+    right: 0; }
+  .dateContainer footer {
+    margin: 0;
+    width: 179px; }
+    .dateContainer footer button {
+      cursor: pointer;
+      color: #989bf3;
+      font-weight: 600;
+      font-size: 12px;
+      width: 179px;
+      height: 65px;
+      line-height: 60px;
+      border: none;
+      border-top: 1px solid #eff0fc;
+      background-color: transparent;
+      outline: none;
+      -webkit-transition: color 0.2s ease;
+      -moz-transition: color 0.2s ease;
+      -ms-transition: color 0.2s ease;
+      -o-transition: color 0.2s ease;
+      transition: color 0.2s ease; }
+      .dateContainer footer button:hover {
+        color: #1a1fd8; }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .selected {
+    border: 2px solid #fe7f80 !important;
+    color: #fe7f80; }
+    .selected:after {
+      display: none; } }
+
+/*# sourceMappingURL=calendar.css.map */

@@ -1,0 +1,25 @@
+{
+  "name": "Calendar",
+  "description": "cal, notes",
+  "main": "",
+  "authors": [
+    "Tadija Lazarevic (lazarevic.tadija@protonmail.com)"
+  ],
+  "license": "MIT",
+  "keywords": [],
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.8",
+    "angular-toastr": "1.7.0",
+    "angular-mousewheel": "^1.0.5"
+  }
+}
